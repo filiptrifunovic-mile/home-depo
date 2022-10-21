@@ -11,11 +11,16 @@ const Contact = () => {
             If you join our newsletter, you will get 20% off for your next 5
             shoppings. Use this opportunity and join today!
           </p>
-          <form className="contact-form">
+          <form
+            className="contact-form"
+            action="https://formspree.io/f/xnqrbrll"
+            method="POST"
+          >
             <input
               type="email"
               className="form-input"
               placeholder="enter email"
+              name="_replyto"
             />
             <button type="submit" className="submit-btn">
               subscribe
