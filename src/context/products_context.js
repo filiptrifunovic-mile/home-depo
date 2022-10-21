@@ -73,6 +73,7 @@ export const ProductsProvider = ({ children }) => {
         ...state,
         openSidebar,
         closeSidebar,
+        getSingleProduct,
       }}
     >
       {children}
