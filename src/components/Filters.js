@@ -6,7 +6,16 @@ import { FaCheck } from "react-icons/fa";
 
 const Filters = () => {
   const {
-    filters: { text, company, category, min_price, max_price, price, shipping },
+    filters: {
+      text,
+      company,
+      category,
+      min_price,
+      max_price,
+      price,
+      shipping,
+      color,
+    },
     updateFilters,
     clearFilters,
     all_products,
@@ -71,6 +80,46 @@ const Filters = () => {
                 );
               })}
             </select>
+          </div>
+
+          {/* colors */}
+
+          <div className="form-control">
+            <h5>colors</h5>
+            <div className="colors">
+              {colors.map((item, index) => {
+                if (item === "all") {
+                  return (
+                    <button
+                      key={index}
+                      name="color"
+                      onClick={updateFilters}
+                      data-color="all"
+                      className={`${
+                        color === "all" ? "all-btn active" : "all-btn"
+                      }`}
+                    >
+                      all
+                    </button>
+                  );
+                }
+
+                return (
+                  <button
+                    key={index}
+                    name="color"
+                    style={{ background: item }}
+                    className={`${
+                      color === item ? "color-btn active" : "color-btn"
+                    }`}
+                    data-color={item}
+                    onClick={updateFilters}
+                  >
+                    {color === item && <FaCheck />}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </form>
       </div>
