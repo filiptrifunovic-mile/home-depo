@@ -72,11 +72,41 @@ const filter_reducer = (state, action) => {
 
     let tempProducts = [...all_products];
 
+    //text
     if (text) {
       tempProducts = tempProducts.filter((item) =>
         item.name.toLowerCase().startsWith(text)
       );
     }
+
+    //category
+
+    if (category !== "all") {
+      tempProducts = tempProducts.filter((item) => item.category === category);
+    }
+
+    // company
+    if (company !== "all") {
+      tempProducts = tempProducts.filter((item) => item.company === company);
+    }
+
+    // colors
+
+    if (color !== "all") {
+      tempProducts = tempProducts.filter((item) => {
+        return item.colors.find((c) => c === color);
+      });
+    }
+
+    // shipping
+
+    if (shipping) {
+      tempProducts = tempProducts.filter((item) => item.shipping);
+    }
+
+    //price
+
+    tempProducts = tempProducts.filter((item) => item.price <= price);
 
     return { ...state, filtered_products: tempProducts };
   }
