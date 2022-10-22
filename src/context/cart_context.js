@@ -38,13 +38,17 @@ export const CartProvider = ({ children }) => {
   }
 
   // remover item
-  function removeItem(id) {}
+  function removeItem(id) {
+    dispatch({ type: REMOVE_CART_ITEM, payload: id });
+  }
 
   // toggle amount
   function toggleAmount(id, value) {}
 
   //clear cart
-  function clearCart() {}
+  function clearCart() {
+    dispatch({ type: CLEAR_CART });
+  }
 
   //local Storage
   useEffect(() => {
