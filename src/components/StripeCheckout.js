@@ -1,7 +1,18 @@
 import React from "react";
+import styled from "styled-components";
 
-function StripeCheckout() {
-  return <div>StripeCheckout</div>;
-}
+const CheckoutForm = () => {
+  return <h2>hello</h2>;
+};
+
+const StripeCheckout = () => {
+  return (
+    <Wrapper>
+      <CheckoutForm />
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.section``;
 
 export default StripeCheckout;
