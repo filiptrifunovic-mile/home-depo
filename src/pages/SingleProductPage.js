@@ -26,6 +26,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     getSingleProduct(`${url}${id}`);
+    //eslint-disable-next-line
   }, [id]);
 
   if (loading) return <Loading />;
