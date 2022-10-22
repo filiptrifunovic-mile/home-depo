@@ -43,7 +43,9 @@ export const CartProvider = ({ children }) => {
   }
 
   // toggle amount
-  function toggleAmount(id, value) {}
+  function toggleAmount(id, value) {
+    dispatch({ type: TOGGLE_CART_ITEM_AMOUNT, payload: { id, value } });
+  }
 
   //clear cart
   function clearCart() {
