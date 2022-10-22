@@ -75,10 +75,16 @@ export const FilterProvider = ({ children }) => {
       value = Number(value);
     }
 
+    if (name === "shipping") {
+      value = e.target.checked;
+    }
+
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   }
 
-  function clearFilters() {}
+  function clearFilters() {
+    dispatch({ type: CLEAR_FILTERS });
+  }
 
   return (
     <FilterContext.Provider
